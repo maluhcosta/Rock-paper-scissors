@@ -38,7 +38,7 @@ body {
   background: white;
   border-radius: 0.9em;
   justify-content: center;
-  padding: 1em 3em 0.6em 3em;
+  padding: 0.7em 2em 4.7em 2em;
 }
 
 .score-container h2 {
@@ -48,13 +48,13 @@ body {
 }
   
 .score {
-  font-size: 2.5em;
+  font-size: 1em;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;  
 }
 
-@media screen and (max-width: 600px) {
-  main {
-    margin: 0 6% 6% 6%;
-  }
+.score-result {
+  font-size: 2.5em;
 }
 
 .btn-choice {
@@ -98,10 +98,97 @@ body {
   
 }
 
+@media screen and (max-width: 600px)  {
+  main {
+    max-width: 100%;
+    height: auto;
+    margin: 0 0 0 0;
+  }
+  
+  .header-container {  
+    width: 90%;
+    height: 20%;
+    text-align: center;
+    padding: 3% 3% 3% 3%;
+  }
+  
+  .logo {
+    max-width: 100%;
+    height: 100%;
+  }
+  
+  .score-container {
+    height: 100%;
+    padding: 0.5em 1.5em 2.5em 1.5em;
+    margin: 0;
+  }
+  
+  .score {
+    position: relative;
+    align-items: center;
+    font-size: 0.8em;
+    
+  }
+  
+  .score-result {
+    font-size: 1.9em;
+  }
+  
+  .btn-choice {
+    width: 7em;
+    height: 7em;
+  }
+  
+  .btn-img {
+    width: 3em;
+    height: 3em;
+  }
+  
+  .container-game {
+    width: 95%;
+    height: auto;
+    background-size: 13em;
+    padding: 2% 0 0 0;
+    background-position: center;
+  }
+  
+  .btn-paper {
+    border: 8px solid #06d6a0;
+    margin: 2% 0 0 8%;
+  }
+  
+  .btn-rock {
+    border: 8px solid #ef476f;
+    margin: 2% 10% 0 0;
+  }
+
+  .btn-scissors {
+    border: 8px solid #ffc43d;
+    margin: 50% 0 0 2%;
+  }
+  
+}
+
+/* FIM DO @MEDIA */
+
+
+
 .footer-container {
   text-align: right;
   margin-right: 5em;
 }
+
+@media only screen and (max-width: 600px) {
+  
+  .footer-container {
+    text-align: center;
+    margin-right: 0;
+    padding: 5px;
+    margin: 0 auto;
+    padding-bottom: 5%; 
+  }
+}
+
 
 .btn-rules {
   font-size: 1.1em;
