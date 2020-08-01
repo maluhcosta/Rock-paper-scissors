@@ -11,10 +11,10 @@
     />
 
     <!-- import the webpage's stylesheet -->
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="style.css" />
 
     <!-- import the webpage's javascript file -->
-    <script src="/script.js" defer></script>
+    <script src="script.js" defer></script>
 
     <title>Frontend Mentor | Rock, Paper, Scissors</title>
 
@@ -24,34 +24,121 @@
   <body>
     <header class="header-container">
       <div class="logo-score">
-        <img src="https://cdn.glitch.com/2fd08c07-965d-4fe4-ac3e-aa8d0ff79be1%2Flogo.svg?v=1595196433418" alt="Rock, Paper, Scissors">
+        <img
+          class="logo"
+          title="Pedra, papel e tesoura"
+          src="https://cdn.glitch.com/2fd08c07-965d-4fe4-ac3e-aa8d0ff79be1%2Flogo.svg?v=1595196433418"
+          alt="Rock, Paper, Scissors"/>
+      </div>
+      
+      <div class="scores-container">          
+        <div class="score-you" title="Pontos">
+          <h3 class="score">
+            you
+          </h3>
+          <h1 class="score-result" id="you">
+            0
+          </h1>
+        </div>
+
+        <div class="score-house" title="Pontos">
+          <h3 class="score">
+            house
+          </h3>
+          <h1 class="score-result" id="house">
+             0
+          </h1>
+        </div>
+      </div>
+    </header>
+
+    <main>
+      <div class="container-game" id="primary-container">
+        <button class="btn-choice btn-paper" title="Paper / Papel" onclick="choicePaper();compareResult()">
+          <img 
+               class="btn-img paper"
+               src="https://cdn.glitch.com/2fd08c07-965d-4fe4-ac3e-aa8d0ff79be1%2Ficon-paper.svg?v=1595196429821" 
+               alt="Paper / Papel"/>
+        </button>
+        <button class="btn-choice btn-rock" title="Rock / Pedra" onclick="choiceRock();compareResult()">
+          <img 
+               class=" btn-img  rock"
+              src="https://cdn.glitch.com/2fd08c07-965d-4fe4-ac3e-aa8d0ff79be1%2Ficon-rock.svg?v=1595196430887"
+              alt="Rock / Pedra"/>
+        </button>
+        <button class="btn-choice btn-scissors" title="Scissors / Tesoura" onclick="choiceScissors();compareResult()">
+          <img
+               class="btn-img  scissors"
+              src="https://cdn.glitch.com/2fd08c07-965d-4fe4-ac3e-aa8d0ff79be1%2Ficon-scissors.svg?v=1595196432406"
+              alt="Scissors / Tesoura"/>
+        </button>
       </div>
         
-      <div class="score-container">
-        <h2 class="score">
-          score
-        </h2>
-        <p class="score-result">
-          0
-        </p>
-      </div>
-    
-    </header>
-    <main>
-      
-      <div class="container-game">
-        <button class="btn-choice btn-paper" title="Papel / Paper"><img class="paper" src="https://cdn.glitch.com/2fd08c07-965d-4fe4-ac3e-aa8d0ff79be1%2Ficon-paper.svg?v=1595196429821" alt="paper"/></button>
-        <button class="btn-choice btn-scissors" title="Tesoura / Scissors"><img class="scissors" src="https://cdn.glitch.com/2fd08c07-965d-4fe4-ac3e-aa8d0ff79be1%2Ficon-scissors.svg?v=1595196432406" alt="scissors"/></button>
-        <button class="btn-choice btn-rock" title="Pedra / Rock"><img class="rock" src="https://cdn.glitch.com/2fd08c07-965d-4fe4-ac3e-aa8d0ff79be1%2Ficon-rock.svg?v=1595196430887" alt="rock"/></button>
-      </div>
-   
+      <section class="choice" id="choice">
+        <div class="choice-container">
+          <div class="box user-choice">
+            <h1>You Picked</h1>
+          <button class="icon user-icon"><img src="" class="choice-user"></button>
+        </div>
+          
+          <div class="box computer-choice">
+            <h1>The house picked</h1>
+            <button class="icon computer-icon"><img src=""></button>
+          </div>
+        </div>
+      </section>
+
+      <section class="result" id="result">
+        <div class="result-container">
+          <div class="play">
+            <h1>You Picked</h1>
+            <button class="icon user"><img src=" " id="img-result"></button>
+          </div>
+            
+          <div class="declare">
+            <h1 id="result-game">You win</h1>
+              <button type="reset" class="play-again" onclick="playAgain()">Play again</button>
+              <button type="reset" id="reset" class="reset" onclick="resetGame()">reset</button>
+          </div>
+            
+          <div class="play">
+            <h1>The house picked</h1>
+            <button class="icon win"><img src="#" id="img-house"></button>
+          </div>
+        </div>
+      </section>
     </main>
-    
+
+    <section id="rules" class="window-rules">
+      <div class="modal-content">
+        <div class="modal-header">        
+          <div class="title-rules">
+            <h2 title="Regras">
+              rules
+            </h2>
+          </div>
+          
+          <div class="close-rules">
+            <a href="#close" title="Close / Fechar">
+              <img src="https://cdn.glitch.com/2fd08c07-965d-4fe4-ac3e-aa8d0ff79be1%2Ficon-close.svg?v=1595196426946" alt="Close button / Botão de fechar"/>
+            </a>
+          </div>
+          
+          <div class="img-rules">
+            <img src="https://cdn.glitch.com/ae798936-fac2-425a-aaf4-079300307c3d%2Fimage-rules.svg?v=1595861258435" alt="Rules / Regras"/>
+          </div>      
+        </div>
+      </div>
+    </section>
+
     <footer class="footer-container">
-      <button class="btn-rules">rules</button>
-     <!-- <p>
-        Made with ♥ by 
-      </p>  -->
-    </footer>  
+      <a href="#rules">
+        <button class="btn-rules" title="Regras">
+          rules
+        </button>
+      </a>
+        <!-- <p>Made with ♥ by </p>  -->
+    </footer>
   </body>
 </html>
+
